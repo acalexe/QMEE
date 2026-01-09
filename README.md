@@ -2,3 +2,5 @@
 Repository for Biology 708: Quantitative Methods in Ecology and Evolution
 Test Test
 This is a line from RStudio
+
+For the first assignment, I chose to use the palmerpenguins data package. The package contains the 'penguins' dataset which contains size measurements  of various parameters from three different penguin species located in three different islands. 
