@@ -17,4 +17,6 @@ penguins |>
     y = "Weight (grams)"
   ) + theme_minimal()
 
+# The mean weight data shows that the Gentoo penguin species is the heaviest species out of the three penguin species. Furthermore, the mean weight data shows that for a penguin species found on multiple islands, such as Adelie and Chinstrap, the mean species weight does not differ based on the island location.
+
 
