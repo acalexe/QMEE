@@ -1,5 +1,7 @@
 library(tidyverse)
-library(palmerpenguins)
+#library(palmerpenguins)
+
+penguins <- read.csv("penguins.csv", header = TRUE)
 
 penguins |> 
   group_by(island,species) |> 
