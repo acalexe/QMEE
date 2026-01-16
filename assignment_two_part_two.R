@@ -3,13 +3,15 @@ clean_data <- readRDS("cleaned_vesicle_fwhm_data.rds")
 library(tidyverse)
 
 
-ggplot(clean_data, aes(x = vesicle_id, y = y)) +
-  geom_point() +
+ggplot(clean_data, aes(x = vesicle_id)) +
+  geom_point(aes(y = x), color = "red", shape = "triangle") +
+  geom_point(aes(y = y), color = "blue", shape = "square") +
   labs( x= "synaptic vesicle ID",
-        y = "x-axis fwhm (microns)",
-        title = "x-axis full-width at half-maximum intensity for individual synaptic vesicles")
+        y = "fwhm (microns)",
+        title = "Full-width at half-maximum intensity for individual synaptic vesicles")
 
 #### ACA: Now RStudio treats the vesicle_id column as a factor. Unsure what to do so that the x-axis values do not overlap...
+
 
 mean_x_fwhm <- clean_data |> 
   summarize(mean_x_fwhm = mean(x))
@@ -24,4 +26,4 @@ print(mean_y_fwhm)
 
 
 
-  
+

@@ -86,21 +86,19 @@ print(unclean_data_two, n = 180)
 
 str(unclean_data_two)
 
-### ACA: The vesicle_id column represents discrete vesicles numbers that are unrelated to other numbers in the column. However, RStudio structure interprets it as a continuous variable. It should be treated as a factor.
+### ACA: The vesicle_id column represents discrete synaptic vesicles that are unrelated to other synaptic vesicles in the column. However, RStudio structure interprets it as a continuous variable. It should be treated as a factor.
+###ACA: This error was even more pronounced in the unclean_data_one tibble. Here, RStudio interprets that both the x- or y- axes increase with vesicle_id number.
 
-ggplot(unclean_data_four, aes(x = vesicle_id, y = y)) +
+ggplot(unclean_data_two, aes(x = vesicle_id, y = y)) +
   geom_point() +
   geom_smooth()
-
-###ACA: This error was even more pronounced in the beginning, with the unclean_data_one tibble. Here, RStudio interprets that both the x- or y- axes increase with vesicle_id number.
 
 ggplot(unclean_data_one, aes(x = coord, y = val)) +
-  geom_point() +
-  geom_smooth()
+  geom_point()
 
-### ACA: RStudio treats vesicle_id as a continuous variable. It should be a factor.
+### ACA: RStudio treats vesicle_id as a numeric column and as a continuous variable. It should be a factor.
 
-clean_data <- unclean_data_four |> 
+clean_data <- unclean_data_two |> 
   mutate(vesicle_id = factor(vesicle_id))
 
 str(clean_data)
