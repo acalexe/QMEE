@@ -111,6 +111,9 @@ ggplot(unclean_data_one, aes(x = coord, y = val)) +
 clean_data <- unclean_data_two |> 
   mutate(vesicle_id = factor(vesicle_id))
 
+### ACA: check for any duplicated data points.
+sum(duplicated(clean_data))
+
 str(clean_data)
 
 saveRDS(clean_data, "cleaned_vesicle_fwhm_data.rds")
