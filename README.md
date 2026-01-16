@@ -30,3 +30,21 @@ Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarct
 
 Assignment Two:
 
+The relative working directory for assignment 2 is QMEE/assignment_two_part_one.R and QMEE/assignment_two_part_two.R. 
+
+Assignment two is located in the QMEE repo directory. The relative working directory for assignment 2 is ‘QMEE/assignment_two_part_one.R’. There are two RStudio scripts for assignment two. The first is ‘assignment_two_part_one.R’, which loads in the ‘Blue Gel1_Cell2 Deconvolved Data.xlsx’ Excel file. The script that extracts the data from the Excel file was written by Dr. Bolker, and it outputs a tibble that contains three columns. One column is for either x- and y-axis coordinates for individual synaptic vesicles, the second column represents the synaptic vesicle id number and the third column represents the full-width at half-maximum intensity distance (microns) for the each synaptic vesicle axis (x- or y-axis). 
+
+For the first part of the assignment, I first clean up the data by organizing the x- and y- axis values coordinates in increasing order with the corresponding synaptic vesicle id. 
+
+Here, the x- and y-axis values are both in the same column, but ideally they should be individual columns that pertain to a specific synaptic vesicle id. To fix this, I pivot the data so that each row represents one vesicle id with its corresponding x- and y-axis fwhm values. 
+
+Next, I check to see what R structures of the data frame is and if there are any anomalies. Here, RStudio shows that the vesicle id column is a numeric column, but it should be a factor since the vesicle ids are separate entities. I fix this by changing the column from a numeric to a factor column. 
+
+
+The second part of the assignment is named ‘assignment_two_part_two.R’ and it reads the .RDS file created from assignment one. 
+
+
+In the end, I would like to determine if bright clusters in my microscopy images correspond to individual synaptic vesicles. One way to test this is to label synaptic vesicles with two probes of different sizes. If our bright clusters of label corresponded to individual synaptic vesicles, labeling one set of vesicles with a large label and another set with a small label would result in two distributions of apparent vesicle size. We quantify vesicle size by measuring the full width at half maximum intensity (FWHM) of individual synaptic vesicles in the X and Y dimensions. I find the highest intensity value by looking at multiple optical sections of a synaptic vesicle and I find the image pixel  with the highest intensity, which should represent the centre of a synaptic vesicle. The maximum intensity value is an arbitrary unit (based on the bit-depth of camera / microscope). Based on the maximum intensity, I calculate the full-width distance of each synaptic vesicle in both the x- and y-axis for values that are above half-maximum intensity.
+
+I am blind which dataset contains either the small or large label size. For this assignment, I have only included one of the datasets to clean the data, but I am hoping to use both datasets for future assignments to compare apparent synaptic vesicle sizes. 
+
