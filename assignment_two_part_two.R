@@ -8,7 +8,7 @@ ggplot(clean_data, aes(x = vesicle_id)) +
   geom_point(aes(y = y), color = "blue", shape = "square") +
   labs( x= "synaptic vesicle ID",
         y = "fwhm (microns)",
-        title = "Full-width at half-maximum intensity for individual synaptic vesicles")
+        title = "X- and Y-axis full-width values at half-maximum intensity for individual synaptic vesicles")
 
 #### ACA: Now RStudio treats the vesicle_id column as a factor. Unsure what to do so that the x-axis values do not overlap...
 
