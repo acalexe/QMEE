@@ -91,10 +91,20 @@ str(unclean_data_two)
 
 ggplot(unclean_data_two, aes(x = vesicle_id, y = y)) +
   geom_point() +
-  geom_smooth()
+  geom_smooth(method = "lm") +
+  labs(
+    x = "vesicle id",
+    y = "x-axis fwhm (microns)",
+    title = "incorrect linear model due to characterizing vesicle id as numeric")
+
 
 ggplot(unclean_data_one, aes(x = coord, y = val)) +
-  geom_point()
+  geom_point() +
+  labs(
+    x = "axis",
+    y = "vesicle id",
+    title = "x- and y-axis values are falsely interpreted as increasing with the vesicle id number"
+  )
 
 ### ACA: RStudio treats vesicle_id as a numeric column and as a continuous variable. It should be a factor.
 

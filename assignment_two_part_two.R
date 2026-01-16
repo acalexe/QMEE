@@ -2,6 +2,8 @@ clean_data <- readRDS("cleaned_vesicle_fwhm_data.rds")
 
 library(tidyverse)
 
+### ACA: check for any duplicated data points.
+sum(duplicated(clean_data))
 
 ggplot(clean_data, aes(x = vesicle_id)) +
   geom_point(aes(y = x), color = "red", shape = "triangle") +
