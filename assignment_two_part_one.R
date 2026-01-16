@@ -71,7 +71,7 @@ unclean_data_one <- unclean_data |>
 
 print(unclean_data_one, n = 180)
 
-### ACA: First, I next check if the R classes and structures are correct.
+### ACA: Second, I next check if the R classes and structures are correct.
 
 str(unclean_data_one)
 
@@ -79,7 +79,6 @@ str(unclean_data_one)
 ### ACA: Also, the val column represents vesicle_id number. Each x,n and y,n values (where n = vesicle_id) pertain to the same synaptic vesicles. The data would be cleaner if pivoted so that x- and y- axes values correspond to the vesicle_id.
 
 unclean_data_two <- unclean_data_one |> 
-  mutate(coord = factor(coord)) |> 
   rename(vesicle_id = val) |> 
   pivot_wider(id_cols = vesicle_id, names_from = coord, values_from = fwhm)
 
