@@ -71,7 +71,7 @@ unclean_data_one <- unclean_data |>
 
 print(unclean_data_one, n = 180)
 
-### ACA: I next check if the R classes and structures are correct
+### ACA: First, I next check if the R classes and structures are correct.
 
 str(unclean_data_one)
 
