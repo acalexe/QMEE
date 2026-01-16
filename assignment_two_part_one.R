@@ -76,24 +76,16 @@ print(unclean_data_one, n = 180)
 str(unclean_data_one)
 
 ### ACA: The coordinate column is a character column, however, it should be a factor column. The x- and y- axes are categorical.
+### ACA: Also, the val column represents vesicle_id number. Each x,n and y,n values (where n = vesicle_id) pertain to the same synaptic vesicles. The data would be cleaner if pivoted so that x- and y- axes values correspond to the vesicle_id.
 
 unclean_data_two <- unclean_data_one |> 
-  mutate(coord = factor(coord))
+  mutate(coord = factor(coord)) |> 
+  rename(vesicle_id = val) |> 
+  pivot_wider(id_cols = vesicle_id, names_from = coord, values_from = fwhm)
+
+print(unclean_data_two, n = 180)
 
 str(unclean_data_two)
-
-#### ACA: val column represents vesicle_id number. Each x,n and y,n values (where n = vesicle_id) pertain to the same synaptic vesicles. The data would be cleaner if pivoted so that x- and y- axes values correspond to the vesicle_id.
-
-unclean_data_three <- unclean_data_two |> 
-  rename(vesicle_id = val)
-
-
-unclean_data_four <- unclean_data_three |> 
-  pivot_wider( id_cols = vesicle_id, names_from = coord, values_from = fwhm)
-
-print(unclean_data_four, n = 180)
-
-str(unclean_data_four)
 
 ### ACA: The vesicle_id column represents discrete vesicles numbers that are unrelated to other numbers in the column. However, RStudio structure interprets it as a continuous variable. It should be treated as a factor.
 
