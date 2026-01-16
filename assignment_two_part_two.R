@@ -8,9 +8,11 @@ ggplot(clean_data, aes(x = vesicle_id)) +
   geom_point(aes(y = y), color = "blue", shape = "square") +
   labs( x= "synaptic vesicle ID",
         y = "fwhm (microns)",
-        title = "X- and Y-axis full-width values at half-maximum intensity for individual synaptic vesicles")
+        title = "X- and Y-axis full-width values at half-maximum intensity for individual synaptic vesicles") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank()) 
 
-#### ACA: Now RStudio treats the vesicle_id column as a factor. Unsure what to do so that the x-axis values do not overlap...
+#### ACA: Now RStudio treats the vesicle_id column as a factor. Unsure what to do so that the x-axis values do not overlap... I just removed the x-axis text to prevent this issue.
 
 
 mean_x_fwhm <- clean_data |> 
