@@ -32,6 +32,8 @@ Assignment Two:
 
 The relative working directory for assignment 2 is QMEE/assignment_two_part_one.R and QMEE/assignment_two_part_two.R. 
 
+JD: No, these scripts are just scripts in the main directory.
+
 Assignment two is located in the QMEE repo directory. The relative working directory for assignment 2 is ‘QMEE/assignment_two_part_one.R’. There are two RStudio scripts for assignment two. The first is ‘assignment_two_part_one.R’, which loads in the ‘Blue Gel1_Cell2 Deconvolved Data.xlsx’ Excel file. The script that extracts the data from the Excel file was written by Dr. Bolker, and it outputs a tibble that contains three columns. One column is for either x- and y-axis coordinates for individual synaptic vesicles, the second column represents the synaptic vesicle id number and the third column represents the full-width at half-maximum intensity distance (microns) for the each synaptic vesicle axis (x- or y-axis). 
 
 For the first part of the assignment, I first clean up the data by organizing the x- and y- axis values coordinates in increasing order with the corresponding synaptic vesicle id. 
