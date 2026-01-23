@@ -2,7 +2,8 @@ clean_data <- readRDS("cleaned_vesicle_fwhm_data.rds")
 
 library(tidyverse)
 
-## The tidy, grammar-of-graphics way to plot these two things as different shapes would be to pivot_longer to put them in the same column (and represent that they are comparable)
+## JD: The tidy, grammar-of-graphics way to plot these two things as different shapes would be to pivot_longer to put them in the same column (and represent that they are comparable)
+## JD: Then you could just say something like aes(color=axis)
 ggplot(clean_data, aes(x = vesicle_id)) +
   geom_point(aes(y = x), color = "red", shape = "triangle") +
   geom_point(aes(y = y), color = "blue", shape = "square") +
