@@ -4,6 +4,8 @@ library(dplyr)
 ### ACA: added tidyverse
 library(tidyverse)
 
+## JD: Please try to avoid spaces in filenames
+
 fn <- "Blue Gel1_Cell2 Deconvolved Data.xlsx"
 dd <- read_excel(fn, col_names=FALSE) |> as.matrix()
 
@@ -16,7 +18,10 @@ get_mat <- function(pos, data = dd)  {
   j <- pos[2]
   hdr <- unname(data[i,j])
   coord <- substr(hdr, 1, 1)
+  ## JD: Probably cleaner to use library(readr) at the top
+  ## (you also wouldn't need the :: prefix
   val <- readr::parse_number(hdr)
+  ## JD: I don't entirely understand the code below, seems like it might be fragile
   ## find first blank (NA) cell, account for extra headers etc.
   nvals <- which(is.na(data[i:(nrow(data)),j]))[1] - 4
   dist <- as.numeric(data[(i+3):(i+2+nvals),j])
@@ -88,6 +93,7 @@ str(unclean_data_two)
 
 ### ACA: The vesicle_id column represents discrete synaptic vesicles that are unrelated to other synaptic vesicles in the column. However, RStudio structure interprets it as a continuous variable. It should be treated as a factor.
 ###ACA: This error was even more pronounced in the unclean_data_one tibble. Here, RStudio interprets that both the x- or y- axes increase with vesicle_id number.
+## JD: Probably not that interesting, but really R is doing the work here; rstudio is just helping you wrap around it
 
 ggplot(unclean_data_two, aes(x = vesicle_id, y = y)) +
   geom_point() +
@@ -97,7 +103,7 @@ ggplot(unclean_data_two, aes(x = vesicle_id, y = y)) +
     y = "x-axis fwhm (microns)",
     title = "incorrect linear model due to characterizing vesicle id as numeric")
 
-
+## JD: Not really following the logic of this second plot
 ggplot(unclean_data_one, aes(x = coord, y = val)) +
   geom_point() +
   labs(
@@ -114,7 +120,10 @@ clean_data <- unclean_data_two |>
 ### ACA: check for any duplicated data points.
 sum(duplicated(clean_data))
 
+## JD: Consider using stopifnot here
+
 str(clean_data)
 
 saveRDS(clean_data, "cleaned_vesicle_fwhm_data.rds")
 
+## JD: Grade 2/3
