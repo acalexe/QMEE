@@ -9,13 +9,15 @@ dataset_two <- read.csv("synaptic_terminal_data_two.csv")
 dataset_one_normalized <- dataset_one |> 
   group_by(synaptic.terminal.id) |> 
   mutate(total_vesicles = sum(count),
-         proportion = count / total_vesicles) 
+         proportion = count / total_vesicles) |> 
+  ungroup()
   
 
 dataset_two_normalized <- dataset_two |> 
   group_by(synaptic.terminal.id) |> 
   mutate(total_vesicles = sum(count),
-         proportion = count / total_vesicles) 
+         proportion = count / total_vesicles) |> 
+  ungroup()
   
 
 cell_one <- ggplot(dataset_one_normalized, aes(synaptic.terminal.id, proportion, fill = synaptic.vesicle.type)) +
