@@ -5,6 +5,7 @@ Repository for Biology 708: Quantitative Methods in Ecology and Evolution
 
 Assignment Three:
 
+Please run assignment three from the main repository directory. Assignment three is named assignment_three.R and the two datafiles for assignment three are synaptic_terminal_data_one.csv and synaptic_terminal_data_two.csv.
 
 
 Assignment Two:
