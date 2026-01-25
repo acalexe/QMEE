@@ -31,7 +31,7 @@ dataset_all_normalized <-  bind_rows(
 )
 
 ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = synaptic.terminal.id)) +
-  geom_point(size = 2,  position = "jitter") +
+  geom_point(size = 2,  position = position_jitter(width = 0.2)) +
   facet_wrap(~ cell) +
   labs(x = "Vesicle Type",
        y = "Proportion per Terminal",
@@ -40,3 +40,7 @@ ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = sy
   ) +
   theme_light() +
   theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
+
+
+### ACA: insert text. I am not too familiar with statistical tests, and I wasn't sure what test to use to compare the proportion of synaptic vesicle type between synaptic terminals.
+### ACA: I want to compare differences in the proportion of synaptic vesicle type per terminal. Since each synaptic terminal is different, I decided to use a

@@ -1,13 +1,13 @@
 ﻿synaptic terminal id,synaptic vesicle type,count
 terminal 1,VIAAT,139
 terminal 1,VGLUT3,62
-terminal 1,colocalization (<25%),13
-terminal 1,colocalization (>50%),9
+terminal 1,colocalization (<25% volume),13
+terminal 1,colocalization (>25% volume),9
 terminal 2,VIAAT,142
 terminal 2,VGLUT3,103
-terminal 2,colocalization (<25%),28
-terminal 2,colocalization (>50%),23
+terminal 2,colocalization (<25% volume),28
+terminal 2,colocalization (>25% volume),23
 terminal 3,VIAAT,162
 terminal 3,VGLUT3,107
-terminal 3,colocalization (<25%),33
-terminal 3,colocalization (>50%),26
+terminal 3,colocalization (<25% volume),33
+terminal 3,colocalization (>25% volume),26
