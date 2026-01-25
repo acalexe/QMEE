@@ -42,5 +42,25 @@ ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = sy
   theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
 
 
-### ACA: insert text. I am not too familiar with statistical tests, and I wasn't sure what test to use to compare the proportion of synaptic vesicle type between synaptic terminals.
-### ACA: I want to compare differences in the proportion of synaptic vesicle type per terminal. Since each synaptic terminal is different, I decided to use a
+### ACA: I am not too familiar with statistical tests, and I wasn't sure what test to use to compare the proportion of synaptic vesicle type between synaptic terminals and cells.
+
+### ACA: I want to compare and check if there are differences in the proportion of synaptic vesicle type per cell. I wanted to use a t-test to test the average proportions between the two different cells, but I don't think my data is normally distributed and I'm unsure what non-parametric tests to use.
+
+cell_means <- dataset_all_normalized |> 
+  group_by(cell, synaptic.vesicle.type) |> 
+  summarize(mean_proportion = mean(proportion))
+
+### ACA: individual terminal data and individual cell data.
+ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = cell)) +
+  geom_point(size = 2, position = position_jitter(width = 0.2)) +
+  geom_point(data = cell_means, aes(y = mean_proportion)) +
+  labs(
+    x = "Vesicle Type",
+    y = "Vesicle Type Proportion per Terminal",
+    title = "Overall Synaptic Vesicle Composition"
+  ) +
+  theme_light() +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
+
+
+  
