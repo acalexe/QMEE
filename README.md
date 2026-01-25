@@ -2,31 +2,10 @@
 
 Repository for Biology 708: Quantitative Methods in Ecology and Evolution
 
-Assignment One:
 
-For the first assignment, I chose to use the palmerpenguins data package (https://allisonhorst.github.io/palmerpenguins/). The package contains the 'penguins' dataset which contains size measurements for various parameters from three different penguin species located in three different islands. For the first assignment, I want to compare the mean body mass for each penguin species based on the corresponding island that they are located in, along with the corresponding standard error. A second purpose of this calculation is to determine if the mean weight of a penguin species that is found on multiple islands differs based on the location. To calculate this, I grouped the penguins based on their corresponding species and based on the island they occupy.
+Assignment Three:
 
-BMB: It's fine to use the penguins for the first assignment. For the second assignment, which will involve data *cleaning*, a pre-cleaned/tidied data set is suboptimal ...
 
-BMB: (1) "whether the mean weight differs" is incorrect (the mean weight will certainly differ; you're interested in statistically, but primarily *biologically* significant differences. (2) We're hoping that you will quickly get to scientific questions that are interesting to you, so that you can work on translating them to statistical questions/workflows ...
-
-The main file to look at is "Assignment_1_Palmer_Penguins_Dataset_Calculation"
-
-```
-read.csv("penguins.csv")
-```
-
-The working directory for this assignment is "/Users/andreialexe/Desktop/QMEE"
-
-BMB: actually the working directory is "the head directory of the repository"; other people may have the repository cloned to different places (on my computer this directory is `/home/bolker/classes/QMEE/private/student_repos/acalexe`)
-
-```
-citation("palmerpenguins")
-#
-#> To cite palmerpenguins in publications use:
- 
-Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.
-```
 
 Assignment Two:
 
@@ -54,4 +33,32 @@ In the end, I would like to determine if bright clusters in my microscopy images
 To investigate the two datasets in the future, I can look at differences (e.g., mean, non-parametric analyses) between the x- and y-axis of the two different label size conditions and to see if there are any observable differences between the two groups. Since we know what the small and large label sizes are, we can also calculate if our expected fwhm size measurements match the empirical data. I can break the project into replicable data components by investigating one dataset at a time, and one axis at a time.
 
 I am blind which dataset contains either the small or large label size. For this assignment, I have only included one of the datasets to clean the data, but I am hoping to use both datasets for future assignments to compare apparent synaptic vesicle sizes. 
+
+
+
+Assignment One:
+
+For the first assignment, I chose to use the palmerpenguins data package (https://allisonhorst.github.io/palmerpenguins/). The package contains the 'penguins' dataset which contains size measurements for various parameters from three different penguin species located in three different islands. For the first assignment, I want to compare the mean body mass for each penguin species based on the corresponding island that they are located in, along with the corresponding standard error. A second purpose of this calculation is to determine if the mean weight of a penguin species that is found on multiple islands differs based on the location. To calculate this, I grouped the penguins based on their corresponding species and based on the island they occupy.
+
+BMB: It's fine to use the penguins for the first assignment. For the second assignment, which will involve data *cleaning*, a pre-cleaned/tidied data set is suboptimal ...
+
+BMB: (1) "whether the mean weight differs" is incorrect (the mean weight will certainly differ; you're interested in statistically, but primarily *biologically* significant differences. (2) We're hoping that you will quickly get to scientific questions that are interesting to you, so that you can work on translating them to statistical questions/workflows ...
+
+The main file to look at is "Assignment_1_Palmer_Penguins_Dataset_Calculation"
+
+```
+read.csv("penguins.csv")
+```
+
+The working directory for this assignment is "/Users/andreialexe/Desktop/QMEE"
+
+BMB: actually the working directory is "the head directory of the repository"; other people may have the repository cloned to different places (on my computer this directory is `/home/bolker/classes/QMEE/private/student_repos/acalexe`)
+
+```
+citation("palmerpenguins")
+#
+#> To cite palmerpenguins in publications use:
+ 
+Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.
+```
 
