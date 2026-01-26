@@ -7,7 +7,7 @@ dataset_one <- read.csv("synaptic_terminal_data_one.csv")
 
 dataset_two <- read.csv("synaptic_terminal_data_two.csv")
 
-### ACA: insert text. Normalize vesicle type data within each synaptic terminal.
+### ACA: Normalize vesicle type data within each synaptic terminal.
 
 dataset_one_normalized <- dataset_one |> 
   group_by(synaptic.terminal.id) |> 
@@ -34,12 +34,14 @@ ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = sy
   geom_point(size = 2,  position = position_jitter(width = 0.2)) +
   facet_wrap(~ cell) +
   labs(x = "Vesicle Type",
-       y = "Proportion per Terminal",
+       y = "Normalized Proportion per Terminal",
        color = "Terminal ID",
-       title = "Proportion of Synaptic Vesciles per Synaptic Terminal in Two Distinct Cells"
+       title = "Proportion of Synaptic Vesicles per Synaptic Terminal in Two Distinct Cells"
   ) +
-  theme_light() +
-  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
+  theme_linedraw() +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1, color = "black"),
+        axis.line = element_line(color = "black"),
+        axis.text.y = element_text(size = 10, color = "black"))
 
 
 ### ACA: I am not too familiar with statistical tests, and I wasn't sure what test to use to compare the proportion of synaptic vesicle type between synaptic terminals and cells.
@@ -50,17 +52,19 @@ cell_means <- dataset_all_normalized |>
   group_by(cell, synaptic.vesicle.type) |> 
   summarize(mean_proportion = mean(proportion))
 
-### ACA: individual terminal data and individual cell data.
+### ACA: individual terminal data and individual cell data. I have kept the grid lines to help distinguish between the x-axis categories.
 ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = cell)) +
   geom_point(size = 2, position = position_jitter(width = 0.2)) +
   geom_point(data = cell_means, aes(y = mean_proportion)) +
   labs(
     x = "Vesicle Type",
     y = "Vesicle Type Proportion per Terminal",
-    title = "Overall Synaptic Vesicle Composition"
+    title = "Normalized Synaptic Vesicle Composition"
   ) +
   theme_light() +
-  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1, color = "black"),
+        axis.line = element_line(color = "black"),
+        axis.text.y = element_text(size = 10, color = "black"))
 
 
   
