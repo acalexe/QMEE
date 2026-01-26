@@ -55,6 +55,7 @@ cell_means <- dataset_all_normalized |>
   summarize(mean_proportion = mean(proportion))
 
 ### ACA: For the second plot, I am comparing the proportions for each synaptic vesicle type at individual synatic terminals overlaid with the mean proportion for each cell. I plotted the proportion for synaptic vesicle type for individual synaptic terminals and the black data points represent the mean proportion for each vesicle type within each cell. I have kept the grid lines to help distinguish between the x-axis categories.
+### ACA: For both plots, I decided to use geom_point since it allows each measurement to be compared using position along a common scale, which is the best way to interpret this data according to the Cleveland hierarchy. The point data also allows for easier visualization of variability between terminals.
 ggplot(dataset_all_normalized, aes(synaptic.vesicle.type, proportion, color = cell)) +
   geom_point(size = 2, position = position_jitter(width = 0.2)) +
   geom_point(data = cell_means, aes(y = mean_proportion), position = position_jitter(width = 0.2), color = "black") +
