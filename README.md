@@ -7,7 +7,7 @@ Assignment Three:
 
 Please run assignment three from the main repository directory (QMEE). Assignment three is named assignment_three.R and the two datafiles for assignment three are synaptic_terminal_data_one.csv and synaptic_terminal_data_two.csv. 
 	
-The data for assignment three was collected using the ImageJ software and contains immunohistochemistry data from neuronal cells that were immunostained for synaptic vesicle proteins. The data contains 3D-segmented synaptic vesicles from individual synaptic terminals. Each dataset corresponds to an independent cell and contains vesicle type count from three different synaptic terminals. Dataset one and two were collected from two different experiments. In both experiments, the cells were immunostained for the same synaptic vesicle proteins. 
+The data for assignment three was collected using the ImageJ software and contains immunohistochemistry data from neuronal cells that were immunostained for synaptic vesicle proteins. The data contains 3D-segmented synaptic vesicle count from individual synaptic terminals. Each dataset corresponds to an independent cell and contains vesicle type count from three different synaptic terminals. Dataset one and two were collected from two different experiments. In both experiments, the cells were immunostained for the same synaptic vesicle proteins. 
 
 
 Vesicle type description:
@@ -22,7 +22,7 @@ Colocalization (<25% volume or >25% volume): when 3D segmented VIAAT-positive an
 The goal of this assignment is to visualize and compare the normalized proportions of synaptic vesicle types within individual synaptic terminals and between different cells. The data is normalized for each synaptic terminal to account for variability in total synaptic vesicle number across synaptic terminals. 
 
 
-Both plot one and plot two follow principles of graphical communication and the Cleveland hierarchy. In plot one, the proportion of each synaptic vesicle type is shown for individual synaptic vesicles. The data from the two different cells was separated using faceting. In plot two, the synaptic vesicle type proportions for each synaptic terminal are plotted and overlaid with the mean proportion for each synaptic vesicle type per cell. 
+Both plot one and plot two follow principles of graphical communication and the Cleveland hierarchy. In plot one, the proportion of each synaptic vesicle type is shown for individual synaptic terminals. The data from the two different cells was separated using faceting. In plot two, the synaptic vesicle type proportions for each synaptic terminal are plotted and overlaid with the mean proportion for each synaptic vesicle type per cell. 
 
 
 
