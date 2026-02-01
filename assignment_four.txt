@@ -1,0 +1,8 @@
+For assignment four I chose the following article:
+
+Noh, Jihyun, Rebecca P. Seal, Jessica A. Garver, Robert H. Edwards, and Karl Kandler. "Glutamate co-release at GABA/glycinergic synapses is crucial for the refinement of an inhibitory map." Nature neuroscience 13, no. 2 (2010): 232-238.
+
+
+Significance: The paper by Noh et al. investigates the role of VGLUT3 expression for the developmental refinement of an immature inhibitory projection in the developing auditory brainstem. VGLUT3 is necessary for the packaging of glutamate into synaptic vesicles, and the authors found that in knockout mice that lack VGLUT3 expression, the inhibitory projection does not undergo developmental strenghtening (increased input strength of synaptic responses) and fails to undergo developmental elimination of synaptic inputs (a necessary component for auditory frequency inputs fine-tuning). 
+
+Statistical philosophy: although I could not find any major statistical errors, given my limited understanding of statistical tests, there were many instances throughout the paper where the authors could have improved their presentation of statistical tests. Many experiments in the paper were based on relatively small sample sizes (n < 10) and a recurring instance for this paper was the lack of effect size numbers, description of normality tests used, and instances where authors did not specify what statistical test was used.
